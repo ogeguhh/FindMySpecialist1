@@ -1,45 +1,78 @@
 
-/*
-    SYMPTOM SELECTION
-    Feature 2: Select Symptoms
+// FEATURE 2: SELECT SYMPTOMS
+// Handles selecting, removing, remembering, and validating symptoms.
 
-    Handles selecting symptoms, validating selections,
-    and navigating between pages.
-*/
-
-// import brings data from another JavaScript file.
-// We import the approved symptom list created earlier.
+// import allows us to use data from another JavaScript file.
 import { approvedSymptoms } from "../data/symptoms.js";
 
-// CLASS: A blueprint that groups related data and methods.
+// A class is a blueprint for creating an object with data and methods.
 class SymptomSelection {
 
-    // constructor() runs when we create a new object from this class.
+    // constructor() runs when a new object is created from this class.
     constructor() {
-        // this refers to the current object.
-        // Set stores unique values and prevents duplicates.
-        this.selectedSymptoms = new Set();
+
+        // sessionStorage.getItem() reads previously saved browser-tab data.
+        // JSON.parse() converts saved JSON text back into a JavaScript array.
+        // || "[]" provides an empty array when nothing has been saved.
+        let savedSymptoms;
+
+        try {
+            savedSymptoms = JSON.parse(
+                sessionStorage.getItem("selectedSymptoms") || "[]"
+            );
+        } catch (error) {
+            // If stored data is invalid, start with an empty selection.
+            savedSymptoms = [];
+        }
+
+        // Array.isArray() verifies that the saved data is an array.
+        // filter() keeps only symptoms from our approved list.
+        const validSymptoms = Array.isArray(savedSymptoms)
+            ? savedSymptoms.filter((symptom) =>
+                approvedSymptoms.includes(symptom)
+            )
+            : [];
+
+        // Set stores unique values, preventing duplicate selections.
+        // this refers to the current SymptomSelection object.
+        this.selectedSymptoms = new Set(validSymptoms);
     }
 
-    // Adds a symptom to our selection.
+    // Adds a symptom to the selected collection.
     addSymptom(symptom) {
         this.selectedSymptoms.add(symptom);
+        this.saveSelection();
     }
 
-    // Removes a symptom from our selection.
+    // Removes a symptom from the selected collection.
     removeSymptom(symptom) {
         this.selectedSymptoms.delete(symptom);
+        this.saveSelection();
     }
 
-    // Checks whether the visitor selected at least one symptom.
-    // Returns true if valid, false if invalid.
+    // Returns true when at least one symptom is selected.
     validateSelection() {
         return this.selectedSymptoms.size > 0;
     }
 
-    // Removes every selected symptom.
+    // Clears every selected symptom.
     clearSelection() {
         this.selectedSymptoms.clear();
+        this.saveSelection();
+    }
+
+    // Saves the current selection so other pages can access it.
+    saveSelection() {
+
+        // Array.from() converts a Set into an array.
+        // JSON.stringify() converts the array into storable JSON text.
+        sessionStorage.setItem(
+            "selectedSymptoms",
+            JSON.stringify(Array.from(this.selectedSymptoms))
+        );
+
+        // Remove previous matches when symptoms change.
+        sessionStorage.removeItem("matchedSpecialties");
     }
 }
 
@@ -52,26 +85,30 @@ const symptomForm = document.getElementById("symptom-form");
 const errorMessage = document.getElementById("error-message");
 const cancelButton = document.getElementById("cancel-btn");
 
-// forEach() repeats an action for every item in an array.
-// symptom represents the current symptom in the loop.
+// forEach() runs a function for every item in an array.
 approvedSymptoms.forEach((symptom) => {
 
-    // createElement() creates a new HTML element using JavaScript.
+    // createElement() creates a new HTML element.
     const label = document.createElement("label");
     const checkbox = document.createElement("input");
 
-    // Sets the input type to checkbox.
     checkbox.type = "checkbox";
     checkbox.value = symptom;
 
-    // Adds our CSS class to the label.
+    // has() checks whether a Set contains a specific value.
+    // This restores the checkbox's previous selected state.
+    checkbox.checked = selection.selectedSymptoms.has(symptom);
+
+    // className assigns a CSS class to an HTML element.
     label.className = "symptom-option";
 
     // append() places elements inside another element.
+    // createTextNode() creates text without treating it as HTML code.
     label.append(checkbox, document.createTextNode(symptom));
     symptomList.append(label);
 
-    // change happens when the visitor checks or unchecks a box.
+    // addEventListener() runs code when an event happens.
+    // "change" happens when a checkbox is checked or unchecked.
     checkbox.addEventListener("change", () => {
 
         // checked is true when the checkbox is selected.
@@ -81,45 +118,36 @@ approvedSymptoms.forEach((symptom) => {
             selection.removeSymptom(symptom);
         }
 
-        // Clears any previous validation error.
+        // textContent changes the text displayed by an HTML element.
         errorMessage.textContent = "";
     });
 });
 
-// submit happens when the visitor clicks Continue.
+// "submit" runs when the visitor clicks Continue.
 symptomForm.addEventListener("submit", (event) => {
 
     // preventDefault() stops the browser's normal form submission.
     event.preventDefault();
 
-    // ! means NOT, so this checks whether selection is invalid.
+    // ! means NOT. This checks whether the selection is invalid.
     if (!selection.validateSelection()) {
         errorMessage.textContent =
             "Please select at least one symptom";
-        return; // Stops the function here.
+        return; // Ends the function early.
     }
 
-    // Array.from() converts our Set into an array.
-    const symptoms = Array.from(selection.selectedSymptoms);
+    // Save the current symptoms before navigating.
+    selection.saveSelection();
 
-    // sessionStorage stores data for this browser tab.
-    // JSON.stringify() converts the array into text for storage.
-    sessionStorage.setItem(
-        "selectedSymptoms",
-        JSON.stringify(symptoms)
-    );
-
-    // location.href navigates the browser to another page.
+    // location.href changes the current webpage.
     window.location.href = "/pages/match-results.html";
 });
 
-// click happens when the visitor presses Cancel.
+// "click" runs when the visitor presses Cancel.
 cancelButton.addEventListener("click", () => {
 
+    // Clear selections and previously saved results.
     selection.clearSelection();
-
-    // removeItem() deletes the saved symptom selection.
-    sessionStorage.removeItem("selectedSymptoms");
 
     // Return to the homepage.
     window.location.href = "/";

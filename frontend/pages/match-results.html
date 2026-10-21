@@ -42,21 +42,35 @@
                 Checking for a specialty match...
             </div>
 
-            <div class="form-actions">
 
-                <a href="/pages/symptoms.html" class="btn btn-secondary">
-                    Change Symptoms
-                </a>
+<!-- Groups the actions available on the results page -->
+<div class="form-actions">
 
-                <!-- Hidden until the backend returns a specialty -->
-                <a href="/pages/specialists.html"
-                   id="find-specialists-btn"
-                   class="btn"
-                   hidden>
-                    Find Specialists
-                </a>
+    <!-- Lets visitors return and edit their symptom selections -->
+    <a href="/pages/symptoms.html" class="btn btn-secondary">
+        Change Symptoms
+    </a>
 
-            </div>
+    <!-- hidden keeps this button invisible until an error occurs -->
+    <!-- type="button" prevents accidental form submissions -->
+    <button
+        type="button"
+        id="retry-btn"
+        class="btn"
+        hidden>
+        Try Again
+    </button>
+
+    <!-- Only appears when an approved specialty match is returned -->
+    <a
+        href="/pages/specialists.html"
+        id="find-specialists-btn"
+        class="btn"
+        hidden>
+        Find Specialists
+    </a>
+
+</div>
 
         </section>
     </main>

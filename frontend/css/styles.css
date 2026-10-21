@@ -6,68 +6,99 @@
 
 /* BODY: Controls the overall appearance of our webpage */
 body {
-    margin: 0;                  /* Removes the default space around the page */
-    font-family: Arial, sans-serif; /* Uses Arial or a backup font */
-    background: #f5f8fc;       /* Sets the background color */
-    color: #243247;            /* Sets the default text color */
+    margin: 0;                       /* Removes the default space around the page */
+    font-family: Arial, sans-serif;  /* Uses Arial or a backup font */
+    background: #f5f8fc;            /* Sets the background color */
+    color: #243247;                 /* Sets the default text color */
 }
 
 /* HEADER: Styles the top section of our website */
 .site-header {
     background: #173b66;
-    padding: 20px 8%;          /* Adds space inside: 20px top/bottom and 8% left/right */
+    padding: 20px 8%; /* Adds space inside: 20px top/bottom and 8% left/right */
     color: white;
 }
 
 /* NAVBAR: Controls how navigation items are arranged */
 .navbar {
-    display: flex;             /* Arranges items using a flexible layout */
-    justify-content: space-between; /* Pushes items to opposite sides */
-    align-items: center;       /* Centers items vertically */
+    display: flex;                    /* Arranges items using a flexible layout */
+    justify-content: space-between;   /* Pushes items to opposite sides */
+    align-items: center;              /* Centers items vertically */
+    gap: 20px;                        /* Adds space between items */
 }
 
 /* LOGO: Styles the FindMySpecialist website name */
 .logo {
-    font-size: 24px;           /* Controls how large the text appears */
+    font-size: 24px;            /* Controls how large the text appears */
     margin: 0;
+    color: white;
+    text-decoration: none;      /* Removes the underline from links */
+    font-weight: bold;          /* Makes text bold */
 }
 
-/* NAVIGATION LINK: Styles the Home link */
+/* NAVIGATION LINK: Styles links on existing pages */
 .nav-link {
     color: white;
-    text-decoration: none;     /* Removes the underline from the link */
+    text-decoration: none;
+}
+
+/* NAVIGATION LINKS: Styles links on the Find Medical Offices page */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+/* A space in a CSS selector targets an element inside another element.
+   This selects all links inside the nav-links container. */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* HOVER: Changes a link's appearance when the mouse moves over it */
+.nav-links a:hover,
+.nav-link:hover,
+.logo:hover {
+    text-decoration: underline;
 }
 
 /* HERO: The main welcome section of our homepage */
 .hero {
-    text-align: center;        /* Centers text horizontally */
+    text-align: center;         /* Centers text horizontally */
     padding: 100px 20px;
     background: white;
 }
 
 .hero h2 {
     font-size: 38px;
-    margin-bottom: 20px;       /* Adds space below an element */
+    margin-bottom: 20px;        /* Adds space below an element */
 }
 
 .hero p {
-    max-width: 650px;          /* Prevents the paragraph from becoming too wide */
-    margin: 0 auto 35px;       /* Centers horizontally and adds 35px below */
-    line-height: 1.7;          /* Controls spacing between lines of text */
+    max-width: 650px;           /* Prevents the paragraph from becoming too wide */
+    margin: 0 auto 35px;        /* Centers horizontally and adds 35px below */
+    line-height: 1.7;           /* Controls spacing between lines of text */
 }
 
-/* BUTTON: Styles our Get Started link like a button */
+/* BUTTON: Styles links and buttons consistently */
 .btn {
-    display: inline-block;     /* Allows a link to have button-like dimensions */
+    display: inline-block;      /* Allows links to have button-like dimensions */
     padding: 14px 30px;
     background: #1877c9;
     color: white;
-    border-radius: 8px;        /* Rounds the corners */
+    border-radius: 8px;         /* Rounds the corners */
     text-decoration: none;
-    font-weight: bold;         /* Makes the text bold */
+    font-weight: bold;
+    border: none;               /* Removes the default button border */
+    cursor: pointer;            /* Shows a hand when hovering */
+    font-family: inherit;       /* Uses the same font as the parent element */
+    font-size: 15px;
+    text-align: center;
 }
 
-/* HOVER: Changes the button color when the mouse is over it */
+/* BUTTON HOVER: Changes the button color when hovered */
 .btn:hover {
     background: #125b99;
 }
@@ -82,9 +113,9 @@ body {
 .steps {
     display: flex;
     justify-content: center;
-    gap: 25px;                 /* Adds space between items */
-    margin-top: 35px;          /* Adds space above the cards */
-    flex-wrap: wrap;           /* Moves items to another row if needed */
+    gap: 25px;
+    margin-top: 35px;           /* Adds space above the cards */
+    flex-wrap: wrap;            /* Moves items to another row if needed */
 }
 
 /* STEP: Styles each individual informational card */
@@ -92,8 +123,8 @@ body {
     background: white;
     padding: 30px;
     border-radius: 12px;
-    flex: 1;                   /* Allows cards to grow and share available space */
-    min-width: 220px;          /* Prevents cards from becoming too narrow */
+    flex: 1;                    /* Allows cards to grow and share available space */
+    min-width: 220px;           /* Prevents cards from becoming too narrow */
     max-width: 350px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* Adds a soft shadow */
 }
@@ -108,23 +139,10 @@ footer {
     line-height: 1.6;
 }
 
-/* MEDIA QUERY: Changes styles when the screen is 600px wide or smaller */
-@media (max-width: 600px) {
-
-    .hero {
-        padding: 65px 20px;
-    }
-
-    .hero h2 {
-        font-size: 28px;
-    }
-}
-
-
-/* SYMPTOM SECTION: Controls the layout of our symptom page */
+/* SYMPTOM SECTION: Controls the layout of our symptom pages */
 .symptom-section {
     max-width: 700px;
-    margin: 60px auto;       /* Centers the section and adds vertical spacing */
+    margin: 60px auto;          /* Centers the section and adds vertical spacing */
     padding: 30px;
     background: white;
     border-radius: 12px;
@@ -136,7 +154,7 @@ footer {
 
 /* FIELDSET: Groups the symptom checkboxes visually */
 fieldset {
-    border: 1px solid #cccccc; /* Adds a solid border around the group */
+    border: 1px solid #cccccc;  /* Adds a solid border around the group */
     border-radius: 8px;
     padding: 20px;
     margin-top: 25px;
@@ -160,25 +178,182 @@ legend {
 .symptom-option input {
     width: 18px;
     height: 18px;
-    cursor: pointer;        /* Shows a hand when hovering */
+    cursor: pointer;
 }
 
-/* FORM ACTIONS: Arranges the Continue and Cancel buttons */
+/* FORM ACTIONS: Arranges navigation and form buttons */
 .form-actions {
     display: flex;
     gap: 15px;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
-/* SECONDARY BUTTON: Gives Cancel a different appearance */
+/* SECONDARY BUTTON: Gives secondary actions a different appearance */
 .btn-secondary {
     background: #68778a;
     border: none;
     cursor: pointer;
 }
 
+/* Secondary buttons need their own hover color */
+.btn-secondary:hover {
+    background: #526174;
+}
+
 /* ERROR MESSAGE: Makes validation errors easy to notice */
 #error-message {
     color: #b42318;
     font-weight: bold;
+}
+
+/* ATTRIBUTE SELECTOR: Targets elements with the hidden attribute.
+   !important prevents other display styles from making them visible. */
+[hidden] {
+    display: none !important;
+}
+
+/* =========================================================
+   FEATURE 4: FIND MEDICAL OFFICES
+   The styles below improve the office search and result cards.
+   ========================================================= */
+
+/* SEARCH FORM: Arranges the search fields vertically */
+#office-search-form {
+    display: flex;
+    flex-direction: column;     /* Stacks items from top to bottom */
+    align-items: flex-start;    /* Aligns fields to the left */
+    gap: 12px;
+    margin-top: 28px;
+    margin-bottom: 25px;
+}
+
+/* SEARCH LABELS: Makes field names easier to identify */
+#office-search-form label {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* SEARCH FIELDS: Styles the specialty dropdown and city input
+   together so they have a consistent appearance. */
+#specialty-select,
+#city-input {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #b9c5d3;
+    border-radius: 8px;
+    background: white;
+    color: #243247;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+/* FOCUS: Styles a field when the visitor selects it.
+   outline adds a visible line for keyboard accessibility. */
+#specialty-select:focus,
+#city-input:focus {
+    outline: 2px solid #1877c9;
+    outline-offset: 2px;        /* Adds space between the element and outline */
+}
+
+/* SEARCH BUTTON: Adds space above the Search Offices button */
+#office-search-form .btn {
+    margin-top: 8px;
+}
+
+/* SEARCH MESSAGE: Displays loading and result-count messages */
+#search-message {
+    margin: 20px 0;
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+/* OFFICE RESULTS: Arranges the returned office cards vertically */
+#office-results {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* OFFICE CARD: Gives every office its own bordered container */
+.office-card {
+    background: #f9fbfe;
+    border: 1px solid #d9e3ee;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+/* OFFICE NAME: Styles the title inside each result card */
+.office-card h3 {
+    margin: 0 0 15px;
+    font-size: 21px;
+    color: #173b66;
+}
+
+/* OFFICE INFORMATION: Improves readability of the details */
+.office-card p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+/* OFFICE DETAILS BUTTON: Separates the button from the text */
+.office-card .btn {
+    margin-top: 12px;
+}
+
+/* URGENT WARNING: Styles the warning from Feature 3 */
+.urgent-warning {
+    background: #fff1f0;
+    color: #9f1d16;
+    border: 2px solid #d92d20;
+    border-radius: 8px;
+    padding: 20px;
+    line-height: 1.6;
+    font-weight: bold;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   Adjusts layouts for smaller screens.
+   ========================================================= */
+
+/* MEDIA QUERY: Applies these rules when the screen is
+   600px wide or smaller. */
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 65px 20px;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .site-header {
+        padding: 20px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .symptom-section {
+        margin: 25px 15px;
+        padding: 22px;
+    }
+
+    .office-card {
+        padding: 18px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
 }

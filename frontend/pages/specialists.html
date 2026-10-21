@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<!--
+    FEATURE 4: FIND MEDICAL OFFICES
+    This page allows visitors to search for fictional medical
+    offices based on their recommended specialty and city.
+-->
+
+<!-- html is the root element of the webpage. -->
+<!-- lang="en" tells browsers the page uses English. -->
+<html lang="en">
+
+<head>
+    <!-- meta charset allows the browser to display text correctly. -->
+    <meta charset="UTF-8">
+
+    <!-- viewport helps the page fit mobile and desktop screens. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- title appears in the browser tab. -->
+    <title>Find Medical Offices | FindMySpecialist</title>
+
+    <!-- link connects this page to our existing CSS stylesheet. -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!--
+        script loads the JavaScript file that will control searching.
+        defer means the script waits until HTML has been parsed.
+        We'll write the JavaScript in the next step.
+    -->
+    <script src="/js/specialistSearch.js" defer></script>
+</head>
+
+<body>
+
+    <!-- header contains our website name and navigation. -->
+    <header class="site-header">
+
+        <!-- nav groups links used to move between pages. -->
+        <nav class="navbar">
+
+            <a href="/index.html" class="logo">
+                FindMySpecialist
+            </a>
+
+            <div class="nav-links">
+                <a href="/index.html">Home</a>
+                <a href="/pages/symptoms.html">Select Symptoms</a>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- main contains the primary content of this page. -->
+    <main>
+
+        <!--
+            section groups related content.
+            class allows our CSS to style this section.
+        -->
+        <section class="symptom-section">
+
+            <h1>Find Medical Offices</h1>
+
+            <p>
+                Search for medical offices based on your
+                recommended specialty and preferred city.
+            </p>
+
+            <p>
+                All office listings are fictional demonstration
+                data for this educational project.
+            </p>
+
+            <!--
+                form groups inputs that belong to one search.
+                id gives JavaScript a way to find this form.
+            -->
+            <form id="office-search-form">
+
+                <!--
+                    label describes an input.
+                    for connects the label to the matching input id.
+                -->
+                <label for="specialty-select">
+                    Medical Specialty
+                </label>
+
+                <!--
+                    select creates a dropdown menu.
+                    required prevents submitting without a selection.
+                -->
+                <select id="specialty-select" required>
+
+                    <!-- option creates one dropdown choice. -->
+                    <option value="">
+                        Select a specialty
+                    </option>
+
+                    <option value="Orthopedics">Orthopedics</option>
+                    <option value="Dermatology">Dermatology</option>
+                    <option value="Ophthalmology">Ophthalmology</option>
+                    <option value="ENT">ENT</option>
+                    <option value="Neurology">Neurology</option>
+                    <option value="Rheumatology">Rheumatology</option>
+
+                </select>
+
+                <!--
+                    type="text" allows visitors to type a city.
+                    City is optional, so there is no required attribute.
+                -->
+                <label for="city-input">
+                    City (Optional)
+                </label>
+
+                <input
+                    type="text"
+                    id="city-input"
+                    placeholder="Example: Minneapolis"
+                >
+
+                <!--
+                    type="submit" submits the search form.
+                    JavaScript will handle the search request.
+                -->
+                <button type="submit" class="btn">
+                    Search Offices
+                </button>
+
+            </form>
+
+            <!--
+                aria-live="polite" lets screen readers announce
+                updated messages without interrupting the user.
+            -->
+            <p id="search-message" aria-live="polite"></p>
+
+            <!--
+                JavaScript will insert matching office information here.
+                We leave it empty because results come from our API.
+            -->
+            <div id="office-results"></div>
+
+            <!-- Link back to the specialty matching results. -->
+            <div class="form-actions">
+
+                <a
+                    href="/pages/match-results.html"
+                    class="btn btn-secondary"
+                >
+                    Back to Specialty Match
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- footer contains information shown at the bottom. -->
+    <footer class="site-footer">
+
+        <p>
+            FindMySpecialist is an educational project.
+            It does not provide medical diagnoses or emergency care.
+        </p>
+
+    </footer>
+
+</body>
+</html>
