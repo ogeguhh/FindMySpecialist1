@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<!-- Tells the browser this document uses HTML5 -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Sets the name shown in the browser tab -->
+    <title>Select Symptoms | FindMySpecialist</title>
+
+    <!-- Connects this page to our shared CSS file -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- type="module" allows JavaScript to import other files -->
+    <!-- defer is automatic for module scripts -->
+    <script type="module" src="/js/symptomSelection.js"></script>
+</head>
+
+<body>
+
+    <!-- HEADER: Displays our website name and navigation -->
+    <header class="site-header">
+        <nav class="navbar">
+            <h1 class="logo">FindMySpecialist</h1>
+            <a href="/" class="nav-link">Home</a>
+        </nav>
+    </header>
+
+    <!-- MAIN: Contains the primary content of this page -->
+    <main>
+        <section class="symptom-section">
+
+            <h2>Select Your Symptoms</h2>
+
+            <p>
+                Choose the symptoms you are experiencing.
+                You can select more than one symptom.
+            </p>
+
+            <!-- FORM: Groups inputs that a visitor can submit -->
+            <form id="symptom-form">
+
+                <!-- FIELDSET: Groups related form controls -->
+                <fieldset>
+                    <legend>Available Symptoms</legend>
+                    <!-- LEGEND: Gives the fieldset a title -->
+
+                    <!-- JavaScript will add symptom checkboxes here -->
+                    <!-- id identifies an element so JavaScript can find it -->
+                    <div id="symptom-list"></div>
+
+                </fieldset>
+
+                <!-- Displays validation errors to visitors -->
+                <!-- role="alert" helps announce error messages -->
+                <p id="error-message" role="alert"></p>
+
+                <div class="form-actions">
+
+                    <!-- type="submit" submits the form -->
+                    <button type="submit" class="btn">
+                        Continue
+                    </button>
+
+                    <!-- type="button" prevents automatic form submission -->
+                    <button type="button" id="cancel-btn"
+                            class="btn btn-secondary">
+                        Cancel
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            Educational demonstration only.
+            Not medical advice or a diagnosis.
+            Provider information is synthetic.
+        </p>
+    </footer>
+
+</body>
+</html>

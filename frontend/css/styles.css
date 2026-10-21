@@ -1,0 +1,184 @@
+
+/* UNIVERSAL SELECTOR: Applies to every HTML element */
+* {
+    box-sizing: border-box; /* Includes padding and borders in an element's total width and height */
+}
+
+/* BODY: Controls the overall appearance of our webpage */
+body {
+    margin: 0;                  /* Removes the default space around the page */
+    font-family: Arial, sans-serif; /* Uses Arial or a backup font */
+    background: #f5f8fc;       /* Sets the background color */
+    color: #243247;            /* Sets the default text color */
+}
+
+/* HEADER: Styles the top section of our website */
+.site-header {
+    background: #173b66;
+    padding: 20px 8%;          /* Adds space inside: 20px top/bottom and 8% left/right */
+    color: white;
+}
+
+/* NAVBAR: Controls how navigation items are arranged */
+.navbar {
+    display: flex;             /* Arranges items using a flexible layout */
+    justify-content: space-between; /* Pushes items to opposite sides */
+    align-items: center;       /* Centers items vertically */
+}
+
+/* LOGO: Styles the FindMySpecialist website name */
+.logo {
+    font-size: 24px;           /* Controls how large the text appears */
+    margin: 0;
+}
+
+/* NAVIGATION LINK: Styles the Home link */
+.nav-link {
+    color: white;
+    text-decoration: none;     /* Removes the underline from the link */
+}
+
+/* HERO: The main welcome section of our homepage */
+.hero {
+    text-align: center;        /* Centers text horizontally */
+    padding: 100px 20px;
+    background: white;
+}
+
+.hero h2 {
+    font-size: 38px;
+    margin-bottom: 20px;       /* Adds space below an element */
+}
+
+.hero p {
+    max-width: 650px;          /* Prevents the paragraph from becoming too wide */
+    margin: 0 auto 35px;       /* Centers horizontally and adds 35px below */
+    line-height: 1.7;          /* Controls spacing between lines of text */
+}
+
+/* BUTTON: Styles our Get Started link like a button */
+.btn {
+    display: inline-block;     /* Allows a link to have button-like dimensions */
+    padding: 14px 30px;
+    background: #1877c9;
+    color: white;
+    border-radius: 8px;        /* Rounds the corners */
+    text-decoration: none;
+    font-weight: bold;         /* Makes the text bold */
+}
+
+/* HOVER: Changes the button color when the mouse is over it */
+.btn:hover {
+    background: #125b99;
+}
+
+/* HOW IT WORKS: Styles our instructional section */
+.how-it-works {
+    padding: 65px 8%;
+    text-align: center;
+}
+
+/* STEPS: Arranges our three informational cards */
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 25px;                 /* Adds space between items */
+    margin-top: 35px;          /* Adds space above the cards */
+    flex-wrap: wrap;           /* Moves items to another row if needed */
+}
+
+/* STEP: Styles each individual informational card */
+.step {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    flex: 1;                   /* Allows cards to grow and share available space */
+    min-width: 220px;          /* Prevents cards from becoming too narrow */
+    max-width: 350px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* Adds a soft shadow */
+}
+
+/* FOOTER: Styles the bottom of our website */
+footer {
+    background: #173b66;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* MEDIA QUERY: Changes styles when the screen is 600px wide or smaller */
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 65px 20px;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+}
+
+
+/* SYMPTOM SECTION: Controls the layout of our symptom page */
+.symptom-section {
+    max-width: 700px;
+    margin: 60px auto;       /* Centers the section and adds vertical spacing */
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+}
+
+.symptom-section h2 {
+    font-size: 30px;
+}
+
+/* FIELDSET: Groups the symptom checkboxes visually */
+fieldset {
+    border: 1px solid #cccccc; /* Adds a solid border around the group */
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 25px;
+}
+
+/* LEGEND: Styles the heading of the checkbox group */
+legend {
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+/* SYMPTOM OPTION: Styles each symptom and its checkbox */
+.symptom-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+}
+
+/* INPUT: Controls the checkbox appearance */
+.symptom-option input {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;        /* Shows a hand when hovering */
+}
+
+/* FORM ACTIONS: Arranges the Continue and Cancel buttons */
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* SECONDARY BUTTON: Gives Cancel a different appearance */
+.btn-secondary {
+    background: #68778a;
+    border: none;
+    cursor: pointer;
+}
+
+/* ERROR MESSAGE: Makes validation errors easy to notice */
+#error-message {
+    color: #b42318;
+    font-weight: bold;
+}

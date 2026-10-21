@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<!-- Tells the browser we are using HTML5 -->
+
+<html lang="en">
+<!-- Starts our webpage and sets the language to English -->
+
+<head>
+    <!-- HEAD: Contains information about the webpage -->
+
+    <meta charset="UTF-8">
+    <!-- Allows the browser to display text and symbols correctly -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Makes the webpage adjust to different screen sizes -->
+
+    <title>FindMySpecialist | Home</title>
+    <!-- The title displayed on the browser tab -->
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <!-- Connects our HTML file to the CSS file -->
+
+    <script src="/js/app.js" defer></script>
+    <!-- Connects our JavaScript file. defer waits until HTML is parsed -->
+</head>
+
+<body>
+    <!-- BODY: Contains everything visitors see on the webpage -->
+
+    <!-- HEADER: The top section of our website -->
+    <header class="site-header">
+
+        <!-- NAV: Contains the website's navigation links -->
+        <nav class="navbar">
+
+            <!-- H1: Main heading used for our website name -->
+            <h1 class="logo">FindMySpecialist</h1>
+
+            <!-- A: Creates a clickable link. href tells it where to go -->
+            <a href="/" class="nav-link">Home</a>
+
+        </nav>
+    </header>
+
+    <!-- MAIN: Contains the main content of our webpage -->
+    <main>
+
+        <!-- SECTION: Groups related content together -->
+        <!-- class: Gives an element a name CSS can use for styling -->
+        <section class="hero">
+
+            <!-- H2: A heading below the main H1 heading -->
+            <h2>Find the Right Medical Specialty</h2>
+
+            <!-- P: Creates a paragraph of text -->
+            <p>
+                Not sure what type of medical specialist you need?
+                FindMySpecialist helps you explore medical specialties
+                based on your symptoms.
+            </p>
+
+            <!-- This link is styled to look like a button -->
+            <a href="/pages/symptoms.html" class="btn">
+                Get Started
+            </a>
+
+        </section>
+
+        <!-- HOW IT WORKS: Explains our application's process -->
+        <section class="how-it-works">
+
+            <h2>How It Works</h2>
+
+            <!-- DIV: A container used to group elements -->
+            <div class="steps">
+
+                <div class="step">
+                    <!-- H3: A smaller heading within a section -->
+                    <h3>1. Select Symptoms</h3>
+                    <p>Choose symptoms from an approved list.</p>
+                </div>
+
+                <div class="step">
+                    <h3>2. Match Specialty</h3>
+                    <p>
+                        Explore specialty suggestions based
+                        on predefined rules.
+                    </p>
+                </div>
+
+                <div class="step">
+                    <h3>3. Find Specialists</h3>
+                    <p>
+                        Browse demonstration provider
+                        listings by location.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER: The bottom section of the webpage -->
+    <footer>
+        <p>
+            Educational demonstration only.
+            Not medical advice or a diagnosis.
+            Provider information is synthetic.
+        </p>
+    </footer>
+
+</body>
+</html>
