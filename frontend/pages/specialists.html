@@ -60,16 +60,16 @@
         -->
         <section class="symptom-section">
 
-            <h1>Find Medical Offices</h1>
+            <h1>Recommended Providers</h1>
 
             <p>
-                Search for medical offices based on your
-                recommended specialty and preferred city.
+                Review providers that match your selected specialty and
+                intake preferences. You can change the specialty or location.
             </p>
 
             <p>
-                All office listings are fictional demonstration
-                data for this educational project.
+                Every listing is mock data. Insurance acceptance, distance,
+                accessibility, and appointment availability are not verified.
             </p>
 
             <!--
@@ -111,13 +111,14 @@
                     City is optional, so there is no required attribute.
                 -->
                 <label for="city-input">
-                    City (Optional)
+                    ZIP code or city
                 </label>
 
                 <input
                     type="text"
                     id="city-input"
-                    placeholder="Example: Minneapolis"
+                    maxlength="100"
+                    placeholder="Example: 55401 or Minneapolis"
                 >
 
                 <!--

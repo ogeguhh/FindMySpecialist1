@@ -4,6 +4,7 @@
 
 // import allows us to use data from another JavaScript file.
 import { approvedSymptoms } from "../data/symptoms.js";
+import { validateIntake } from "./intakeValidation.mjs";
 
 // A class is a blueprint for creating an object with data and methods.
 class SymptomSelection {
@@ -129,18 +130,46 @@ symptomForm.addEventListener("submit", (event) => {
     // preventDefault() stops the browser's normal form submission.
     event.preventDefault();
 
-    // ! means NOT. This checks whether the selection is invalid.
-    if (!selection.validateSelection()) {
-        errorMessage.textContent =
-            "Please select at least one symptom";
+    const formData = new FormData(symptomForm);
+    const validationMessage = validateIntake({
+        ageGroup: formData.get("ageGroup"),
+        location: formData.get("location"),
+        insuranceProvider: formData.get("insuranceProvider"),
+        insurancePlan: formData.get("insurancePlan"),
+        preferredLanguage: formData.get("preferredLanguage"),
+        appointmentType: formData.get("appointmentType"),
+        travelDistance: formData.get("travelDistance"),
+        accessibility: formData.get("accessibility"),
+        selectedSymptoms: Array.from(selection.selectedSymptoms)
+    });
+
+    if (validationMessage) {
+        errorMessage.textContent = validationMessage;
+        if (!selection.validateSelection()) {
+            symptomList.querySelector("input").focus();
+        }
         return; // Ends the function early.
     }
 
     // Save the current symptoms before navigating.
     selection.saveSelection();
 
+    const intake = Object.fromEntries(formData.entries());
+    intake.selectedSymptoms = Array.from(selection.selectedSymptoms);
+
+    // Keep the guest intake only in this tab for the matching flow.
+    sessionStorage.setItem("intakeForMatching", JSON.stringify(intake));
+
     // location.href changes the current webpage.
     window.location.href = "/pages/match-results.html";
+});
+
+symptomForm.addEventListener("input", () => {
+    errorMessage.textContent = "";
+});
+
+symptomForm.addEventListener("change", () => {
+    errorMessage.textContent = "";
 });
 
 // "click" runs when the visitor presses Cancel.
@@ -148,6 +177,9 @@ cancelButton.addEventListener("click", () => {
 
     // Clear selections and previously saved results.
     selection.clearSelection();
+    sessionStorage.removeItem("intakeForMatching");
+    sessionStorage.removeItem("matchingResult");
+    sessionStorage.removeItem("matchedSpecialties");
 
     // Return to the homepage.
     window.location.href = "/";

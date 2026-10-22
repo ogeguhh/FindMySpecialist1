@@ -12,12 +12,14 @@ const matchingRoutes = require("./routes/matching");
 // Import our Feature 4 specialist search routes.
 // This gives server.js access to the search functionality.
 const specialistRoutes = require("./routes/specialists");
+const authRoutes = require("./routes/auth");
+const profileRoutes = require("./routes/profile");
 
 // Create our Express application.
 const app = express();
 
 // The port number tells our server where to listen.
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // app.use() adds functionality to our Express application.
 // express.json() allows the server to read incoming JSON data.
@@ -47,10 +49,16 @@ app.use("/api/match", matchingRoutes);
 // FEATURE 4: FIND SPECIALISTS
 // Requests beginning with /api/specialists go to routes/specialists.js.
 app.use("/api/specialists", specialistRoutes);
+app.use("/api/auth", authRoutes.router);
+app.use("/api/profile", profileRoutes);
 
 // app.listen() starts our server.
 // The arrow function () => runs when the server starts.
 // Template literals use backticks and ${} to insert variable values.
-app.listen(PORT, () => {
-    console.log(`FindMySpecialist running at http://localhost:${PORT}`);
-});
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`FindMySpecialist running at http://localhost:${PORT}`);
+    });
+}
+
+module.exports = app;

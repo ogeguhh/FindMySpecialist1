@@ -148,8 +148,101 @@ footer {
     border-radius: 12px;
 }
 
+.intake-section {
+    max-width: 900px;
+}
+
 .symptom-section h2 {
     font-size: 30px;
+}
+
+.intake-intro {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.intake-progress {
+    margin-bottom: 30px;
+}
+
+.intake-progress-label {
+    color: #176b72;
+    font-weight: bold;
+}
+
+.intake-progress ol {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 0;
+}
+
+.intake-progress li {
+    border-top: 4px solid #d9e3ee;
+    color: #526174;
+    padding-top: 8px;
+    font-size: 14px;
+}
+
+.intake-progress li[aria-current="step"] {
+    border-color: #178b8c;
+    color: #173b66;
+    font-weight: bold;
+}
+
+.privacy-note {
+    background: #eaf6f5;
+    border-left: 4px solid #178b8c;
+    border-radius: 4px;
+    line-height: 1.6;
+    margin: 20px 0;
+    padding: 14px 16px;
+}
+
+.intake-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 24px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-field label {
+    font-weight: bold;
+}
+
+.form-field input,
+.form-field select {
+    width: 100%;
+    min-height: 46px;
+    padding: 11px 12px;
+    border: 1px solid #b9c5d3;
+    border-radius: 8px;
+    background: white;
+    color: #243247;
+    font: inherit;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.symptom-option input:focus-visible,
+.choice-option input:focus-visible,
+.healthcare-glossary summary:focus-visible {
+    outline: 2px solid #178b8c;
+    outline-offset: 2px;
+}
+
+.form-field small,
+.field-help {
+    color: #526174;
+    line-height: 1.5;
 }
 
 /* FIELDSET: Groups the symptom checkboxes visually */
@@ -158,6 +251,81 @@ fieldset {
     border-radius: 8px;
     padding: 20px;
     margin-top: 25px;
+}
+
+.intake-fieldset {
+    margin-top: 28px;
+}
+
+.symptom-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px 20px;
+}
+
+.symptom-option {
+    min-height: 44px;
+}
+
+.choice-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.choice-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    cursor: pointer;
+}
+
+.choice-option input {
+    width: 18px;
+    height: 18px;
+    accent-color: #178b8c;
+}
+
+.consent-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 24px;
+    line-height: 1.5;
+}
+
+.consent-option input {
+    min-width: 18px;
+    min-height: 18px;
+    accent-color: #178b8c;
+}
+
+.healthcare-glossary {
+    margin-top: 26px;
+    border: 1px solid #d9e3ee;
+    border-radius: 8px;
+    padding: 16px;
+    line-height: 1.6;
+}
+
+.healthcare-glossary summary {
+    color: #173b66;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.healthcare-glossary dt {
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+.healthcare-glossary dd {
+    margin-left: 0;
+}
+
+.optional-fields {
+    margin-top: 24px;
 }
 
 /* LEGEND: Styles the heading of the checkbox group */
@@ -299,6 +467,17 @@ legend {
 /* OFFICE DETAILS BUTTON: Separates the button from the text */
 .office-card .btn {
     margin-top: 12px;
+    margin-right: 10px;
+}
+
+.office-card button:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+.provider-mock-notice {
+    color: #526174;
+    font-weight: bold;
 }
 
 /* URGENT WARNING: Styles the warning from Feature 3 */
@@ -346,6 +525,19 @@ legend {
     .symptom-section {
         margin: 25px 15px;
         padding: 22px;
+    }
+
+    .intake-grid,
+    .symptom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .intake-progress ol {
+        gap: 6px;
+    }
+
+    .intake-progress li {
+        font-size: 12px;
     }
 
     .office-card {

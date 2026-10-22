@@ -10,6 +10,9 @@ const officeName = document.getElementById("office-name");
 const officeSpecialty = document.getElementById("office-specialty");
 const officeLocation = document.getElementById("office-location");
 const officeDescription = document.getElementById("office-description");
+const officeLanguages = document.getElementById("office-languages");
+const officeTelehealth = document.getElementById("office-telehealth");
+const officeDataStatus = document.getElementById("office-data-status");
 const externalLinkContainer = document.getElementById(
     "office-external-link"
 );
@@ -89,23 +92,33 @@ async function displayOfficeDetails() {
             "Location: " + office.city + ", " + office.state;
         officeDescription.textContent =
             "About This Office: " + office.description;
+        officeLanguages.textContent =
+            "Languages listed in mock data: " +
+            (Array.isArray(office.languages)
+                ? office.languages.join(", ")
+                : "Not listed");
+        officeTelehealth.textContent =
+            "Telehealth: " + (office.telehealth
+                ? "listed in mock data; confirm with the clinic"
+                : "not listed in mock data");
+        officeDataStatus.textContent =
+            "Mock provider listing. Details, insurance, and availability " +
+            "have not been verified.";
 
-        // Only show an external website when one exists.
-        // Our fictional office records currently have no verified URLs.
-        if (office.website) {
+        if (office.websiteVerified && office.website) {
 
-            // try/catch safely handles malformed website addresses.
             try {
                 const websiteUrl = new URL(office.website);
 
-                // Only allow secure HTTPS links.
-                if (websiteUrl.protocol === "https:") {
+                if (websiteUrl.protocol === "https:" &&
+                    !websiteUrl.username &&
+                    !websiteUrl.password) {
 
                     // createElement() creates an HTML element.
                     const websiteLink = document.createElement("a");
 
                     websiteLink.href = websiteUrl.href;
-                    websiteLink.textContent = "Visit Office Website";
+                    websiteLink.textContent = "Visit Provider Website";
                     websiteLink.className = "btn";
 
                     // Open the website in a separate browser tab.
@@ -119,9 +132,13 @@ async function displayOfficeDetails() {
                     externalLinkContainer.hidden = false;
                 }
 
-            } catch (error) {
-                console.error("Invalid office website:", error);
+            } catch {
+                officeDataStatus.textContent +=
+                    " No safe verified website is available.";
             }
+        } else {
+            officeDataStatus.textContent +=
+                " No verified external website is available for this mock clinic.";
         }
 
         // Clear the loading message and show the office.
