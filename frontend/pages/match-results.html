@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Match Results | FindMySpecialist</title>
+
+    <!-- Reuses our existing website styling -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- Loads the JavaScript responsible for displaying matches -->
+    <script type="module" src="/js/specialtyMatcher.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">FindMySpecialist</h1>
+            <a href="/" class="nav-link">Home</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="symptom-section">
+
+            <h2>Your Specialty Suggestions</h2>
+
+            <p>
+                These transparent, rule-based suggestions are based on your
+                selected concerns. They are not diagnoses or medical advice.
+            </p>
+
+            <h3>Your Selected Healthcare Concerns</h3>
+            <p id="selected-symptoms">Loading...</p>
+
+            <!-- aria-live announces updated results to screen readers -->
+            <div id="match-result" aria-live="polite">
+                Checking for a specialty match...
+            </div>
+
+
+<!-- Groups the actions available on the results page -->
+<div class="form-actions">
+
+    <!-- Lets visitors return and edit their symptom selections -->
+    <a href="/pages/symptoms.html" class="btn btn-secondary">
+        Change Symptoms
+    </a>
+
+    <!-- hidden keeps this button invisible until an error occurs -->
+    <!-- type="button" prevents accidental form submissions -->
+    <button
+        type="button"
+        id="retry-btn"
+        class="btn"
+        hidden>
+        Try Again
+    </button>
+
+    <!-- Only appears when an approved specialty match is returned -->
+    <a
+        href="/pages/specialists.html"
+        id="find-specialists-btn"
+        class="btn"
+        hidden>
+        Find Specialists
+    </a>
+
+</div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            Educational demonstration only.
+            Not medical advice or a diagnosis.
+            Provider information is synthetic.
+        </p>
+    </footer>
+
+</body>
+</html>

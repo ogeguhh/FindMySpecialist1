@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<!-- Tells the browser this document uses HTML5 -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Sets the name shown in the browser tab -->
+    <title>Healthcare Intake | FindMySpecialist</title>
+
+    <!-- Connects this page to our shared CSS file -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- type="module" allows JavaScript to import other files -->
+    <!-- defer is automatic for module scripts -->
+    <script type="module" src="/js/symptomSelection.js"></script>
+</head>
+
+<body>
+
+    <!-- HEADER: Displays our website name and navigation -->
+    <header class="site-header">
+        <nav class="navbar">
+            <h1 class="logo">FindMySpecialist</h1>
+            <a href="/" class="nav-link">Home</a>
+        </nav>
+    </header>
+
+    <!-- MAIN: Contains the primary content of this page -->
+    <main>
+        <section class="symptom-section intake-section">
+
+            <nav class="intake-progress" aria-label="Intake progress">
+                <span class="intake-progress-label">Step 1 of 3</span>
+                <ol>
+                    <li aria-current="step">Your needs</li>
+                    <li>Specialty match</li>
+                    <li>Provider options</li>
+                </ol>
+            </nav>
+
+            <h2>Tell us what you’re looking for</h2>
+            <p class="intake-intro">
+                Share a few details to help guide your search. You can select
+                more than one concern.
+            </p>
+
+            <p class="privacy-note">
+                Your intake is kept temporarily in this browser tab to find
+                mock providers. The app does not save it to an account or log
+                it. Cancel clears it; closing this tab clears its session data.
+                Insurance, distance, and provider details are not verified.
+            </p>
+
+            <form id="symptom-form" autocomplete="off">
+                <div class="intake-grid">
+                    <div class="form-field">
+                        <label for="age-group">Age group</label>
+                        <select id="age-group" name="ageGroup" required>
+                            <option value="">Choose an age group</option>
+                            <option value="under-18">Under 18</option>
+                            <option value="18-24">18–24</option>
+                            <option value="25-34">25–34</option>
+                            <option value="35-44">35–44</option>
+                            <option value="45-54">45–54</option>
+                            <option value="55-64">55–64</option>
+                            <option value="65-plus">65 or older</option>
+                        </select>
+                        <small>We ask for an age range, not your birth date.</small>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="location">ZIP code or city</label>
+                        <input
+                            id="location"
+                            name="location"
+                            type="text"
+                            maxlength="100"
+                            placeholder="e.g., 55401 or Minneapolis"
+                            required>
+                        <small>Used to focus your search on a nearby area.</small>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="insurance-provider">Insurance provider</label>
+                        <input
+                            id="insurance-provider"
+                            name="insuranceProvider"
+                            type="text"
+                            maxlength="100"
+                            placeholder="Enter a provider, or leave blank">
+                        <small>Leave blank if uninsured or if you’re not sure.</small>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="insurance-plan">Insurance plan</label>
+                        <input
+                            id="insurance-plan"
+                            name="insurancePlan"
+                            type="text"
+                            maxlength="100"
+                            placeholder="Plan name, if known">
+                        <small>Plan names can differ even for the same provider.</small>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="preferred-language">Preferred language</label>
+                        <select id="preferred-language" name="preferredLanguage" required>
+                            <option value="">Choose a language</option>
+                            <option>English</option>
+                            <option>Spanish</option>
+                            <option>Somali</option>
+                            <option>Hmong</option>
+                            <option>Vietnamese</option>
+                            <option>Arabic</option>
+                            <option>American Sign Language</option>
+                            <option>Another language</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="travel-distance">Maximum travel distance</label>
+                        <select id="travel-distance" name="travelDistance" required>
+                            <option value="">Choose a distance</option>
+                            <option value="5">5 miles</option>
+                            <option value="10">10 miles</option>
+                            <option value="15">15 miles</option>
+                            <option value="25">25 miles</option>
+                            <option value="50">50 miles</option>
+                        </select>
+                    </div>
+                </div>
+
+                <fieldset class="intake-fieldset">
+                    <legend>What would you like help with?</legend>
+                    <p class="field-help">Choose all that apply.</p>
+                    <div id="symptom-list" class="symptom-grid"></div>
+                </fieldset>
+
+                <fieldset class="intake-fieldset">
+                    <legend>Preferred appointment type</legend>
+                    <div class="choice-row">
+                        <label class="choice-option">
+                            <input type="radio" name="appointmentType" value="in-person" required>
+                            <span>In person</span>
+                        </label>
+                        <label class="choice-option">
+                            <input type="radio" name="appointmentType" value="telehealth">
+                            <span>Telehealth</span>
+                        </label>
+                    </div>
+                    <p class="field-help">
+                        Telehealth is a visit with a healthcare professional by
+                        video or phone.
+                    </p>
+                </fieldset>
+
+                <div class="intake-grid optional-fields">
+                    <div class="form-field">
+                        <label for="accessibility">Accessibility needs (optional)</label>
+                        <input
+                            id="accessibility"
+                            name="accessibility"
+                            type="text"
+                            maxlength="200"
+                            placeholder="e.g., step-free access or interpreter">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="transportation">Transportation preference (optional)</label>
+                        <select id="transportation" name="transportation">
+                            <option value="">No preference</option>
+                            <option value="public-transit">Public transit</option>
+                            <option value="personal-vehicle">Personal vehicle</option>
+                            <option value="rideshare">Rideshare</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <details class="healthcare-glossary">
+                    <summary>New to U.S. healthcare? See common terms</summary>
+                    <dl>
+                        <dt>Specialist</dt>
+                        <dd>A healthcare professional with focused training in one area of care.</dd>
+                        <dt>Referral</dt>
+                        <dd>A recommendation from another healthcare professional to see a specialist. Some plans require one.</dd>
+                        <dt>In-network</dt>
+                        <dd>A provider contracted with an insurance plan. Confirm coverage with your plan before a visit.</dd>
+                    </dl>
+                </details>
+
+                <p id="error-message" role="alert" aria-live="assertive"></p>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn">Continue</button>
+                    <button type="button" id="cancel-btn" class="btn btn-secondary">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            Educational demonstration only.
+            Not medical advice or a diagnosis.
+            Provider information is synthetic.
+        </p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,551 @@
+
+/* UNIVERSAL SELECTOR: Applies to every HTML element */
+* {
+    box-sizing: border-box; /* Includes padding and borders in an element's total width and height */
+}
+
+/* BODY: Controls the overall appearance of our webpage */
+body {
+    margin: 0;                       /* Removes the default space around the page */
+    font-family: Arial, sans-serif;  /* Uses Arial or a backup font */
+    background: #f5f8fc;            /* Sets the background color */
+    color: #243247;                 /* Sets the default text color */
+}
+
+/* HEADER: Styles the top section of our website */
+.site-header {
+    background: #173b66;
+    padding: 20px 8%; /* Adds space inside: 20px top/bottom and 8% left/right */
+    color: white;
+}
+
+/* NAVBAR: Controls how navigation items are arranged */
+.navbar {
+    display: flex;                    /* Arranges items using a flexible layout */
+    justify-content: space-between;   /* Pushes items to opposite sides */
+    align-items: center;              /* Centers items vertically */
+    gap: 20px;                        /* Adds space between items */
+}
+
+/* LOGO: Styles the FindMySpecialist website name */
+.logo {
+    font-size: 24px;            /* Controls how large the text appears */
+    margin: 0;
+    color: white;
+    text-decoration: none;      /* Removes the underline from links */
+    font-weight: bold;          /* Makes text bold */
+}
+
+/* NAVIGATION LINK: Styles links on existing pages */
+.nav-link {
+    color: white;
+    text-decoration: none;
+}
+
+/* NAVIGATION LINKS: Styles links on the Find Medical Offices page */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+/* A space in a CSS selector targets an element inside another element.
+   This selects all links inside the nav-links container. */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* HOVER: Changes a link's appearance when the mouse moves over it */
+.nav-links a:hover,
+.nav-link:hover,
+.logo:hover {
+    text-decoration: underline;
+}
+
+/* HERO: The main welcome section of our homepage */
+.hero {
+    text-align: center;         /* Centers text horizontally */
+    padding: 100px 20px;
+    background: white;
+}
+
+.hero h2 {
+    font-size: 38px;
+    margin-bottom: 20px;        /* Adds space below an element */
+}
+
+.hero p {
+    max-width: 650px;           /* Prevents the paragraph from becoming too wide */
+    margin: 0 auto 35px;        /* Centers horizontally and adds 35px below */
+    line-height: 1.7;           /* Controls spacing between lines of text */
+}
+
+/* BUTTON: Styles links and buttons consistently */
+.btn {
+    display: inline-block;      /* Allows links to have button-like dimensions */
+    padding: 14px 30px;
+    background: #1877c9;
+    color: white;
+    border-radius: 8px;         /* Rounds the corners */
+    text-decoration: none;
+    font-weight: bold;
+    border: none;               /* Removes the default button border */
+    cursor: pointer;            /* Shows a hand when hovering */
+    font-family: inherit;       /* Uses the same font as the parent element */
+    font-size: 15px;
+    text-align: center;
+}
+
+/* BUTTON HOVER: Changes the button color when hovered */
+.btn:hover {
+    background: #125b99;
+}
+
+/* HOW IT WORKS: Styles our instructional section */
+.how-it-works {
+    padding: 65px 8%;
+    text-align: center;
+}
+
+/* STEPS: Arranges our three informational cards */
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 35px;           /* Adds space above the cards */
+    flex-wrap: wrap;            /* Moves items to another row if needed */
+}
+
+/* STEP: Styles each individual informational card */
+.step {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    flex: 1;                    /* Allows cards to grow and share available space */
+    min-width: 220px;           /* Prevents cards from becoming too narrow */
+    max-width: 350px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* Adds a soft shadow */
+}
+
+/* FOOTER: Styles the bottom of our website */
+footer {
+    background: #173b66;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* SYMPTOM SECTION: Controls the layout of our symptom pages */
+.symptom-section {
+    max-width: 700px;
+    margin: 60px auto;          /* Centers the section and adds vertical spacing */
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+}
+
+.intake-section {
+    max-width: 900px;
+}
+
+.symptom-section h2 {
+    font-size: 30px;
+}
+
+.intake-intro {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.intake-progress {
+    margin-bottom: 30px;
+}
+
+.intake-progress-label {
+    color: #176b72;
+    font-weight: bold;
+}
+
+.intake-progress ol {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 0;
+}
+
+.intake-progress li {
+    border-top: 4px solid #d9e3ee;
+    color: #526174;
+    padding-top: 8px;
+    font-size: 14px;
+}
+
+.intake-progress li[aria-current="step"] {
+    border-color: #178b8c;
+    color: #173b66;
+    font-weight: bold;
+}
+
+.privacy-note {
+    background: #eaf6f5;
+    border-left: 4px solid #178b8c;
+    border-radius: 4px;
+    line-height: 1.6;
+    margin: 20px 0;
+    padding: 14px 16px;
+}
+
+.intake-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 24px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-field label {
+    font-weight: bold;
+}
+
+.form-field input,
+.form-field select {
+    width: 100%;
+    min-height: 46px;
+    padding: 11px 12px;
+    border: 1px solid #b9c5d3;
+    border-radius: 8px;
+    background: white;
+    color: #243247;
+    font: inherit;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.symptom-option input:focus-visible,
+.choice-option input:focus-visible,
+.healthcare-glossary summary:focus-visible {
+    outline: 2px solid #178b8c;
+    outline-offset: 2px;
+}
+
+.form-field small,
+.field-help {
+    color: #526174;
+    line-height: 1.5;
+}
+
+/* FIELDSET: Groups the symptom checkboxes visually */
+fieldset {
+    border: 1px solid #cccccc;  /* Adds a solid border around the group */
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 25px;
+}
+
+.intake-fieldset {
+    margin-top: 28px;
+}
+
+.symptom-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px 20px;
+}
+
+.symptom-option {
+    min-height: 44px;
+}
+
+.choice-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.choice-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    cursor: pointer;
+}
+
+.choice-option input {
+    width: 18px;
+    height: 18px;
+    accent-color: #178b8c;
+}
+
+.consent-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 24px;
+    line-height: 1.5;
+}
+
+.consent-option input {
+    min-width: 18px;
+    min-height: 18px;
+    accent-color: #178b8c;
+}
+
+.healthcare-glossary {
+    margin-top: 26px;
+    border: 1px solid #d9e3ee;
+    border-radius: 8px;
+    padding: 16px;
+    line-height: 1.6;
+}
+
+.healthcare-glossary summary {
+    color: #173b66;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.healthcare-glossary dt {
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+.healthcare-glossary dd {
+    margin-left: 0;
+}
+
+.optional-fields {
+    margin-top: 24px;
+}
+
+/* LEGEND: Styles the heading of the checkbox group */
+legend {
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+/* SYMPTOM OPTION: Styles each symptom and its checkbox */
+.symptom-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+}
+
+/* INPUT: Controls the checkbox appearance */
+.symptom-option input {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* FORM ACTIONS: Arranges navigation and form buttons */
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+/* SECONDARY BUTTON: Gives secondary actions a different appearance */
+.btn-secondary {
+    background: #68778a;
+    border: none;
+    cursor: pointer;
+}
+
+/* Secondary buttons need their own hover color */
+.btn-secondary:hover {
+    background: #526174;
+}
+
+/* ERROR MESSAGE: Makes validation errors easy to notice */
+#error-message {
+    color: #b42318;
+    font-weight: bold;
+}
+
+/* ATTRIBUTE SELECTOR: Targets elements with the hidden attribute.
+   !important prevents other display styles from making them visible. */
+[hidden] {
+    display: none !important;
+}
+
+/* =========================================================
+   FEATURE 4: FIND MEDICAL OFFICES
+   The styles below improve the office search and result cards.
+   ========================================================= */
+
+/* SEARCH FORM: Arranges the search fields vertically */
+#office-search-form {
+    display: flex;
+    flex-direction: column;     /* Stacks items from top to bottom */
+    align-items: flex-start;    /* Aligns fields to the left */
+    gap: 12px;
+    margin-top: 28px;
+    margin-bottom: 25px;
+}
+
+/* SEARCH LABELS: Makes field names easier to identify */
+#office-search-form label {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* SEARCH FIELDS: Styles the specialty dropdown and city input
+   together so they have a consistent appearance. */
+#specialty-select,
+#city-input {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #b9c5d3;
+    border-radius: 8px;
+    background: white;
+    color: #243247;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+/* FOCUS: Styles a field when the visitor selects it.
+   outline adds a visible line for keyboard accessibility. */
+#specialty-select:focus,
+#city-input:focus {
+    outline: 2px solid #1877c9;
+    outline-offset: 2px;        /* Adds space between the element and outline */
+}
+
+/* SEARCH BUTTON: Adds space above the Search Offices button */
+#office-search-form .btn {
+    margin-top: 8px;
+}
+
+/* SEARCH MESSAGE: Displays loading and result-count messages */
+#search-message {
+    margin: 20px 0;
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+/* OFFICE RESULTS: Arranges the returned office cards vertically */
+#office-results {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* OFFICE CARD: Gives every office its own bordered container */
+.office-card {
+    background: #f9fbfe;
+    border: 1px solid #d9e3ee;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+/* OFFICE NAME: Styles the title inside each result card */
+.office-card h3 {
+    margin: 0 0 15px;
+    font-size: 21px;
+    color: #173b66;
+}
+
+/* OFFICE INFORMATION: Improves readability of the details */
+.office-card p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+/* OFFICE DETAILS BUTTON: Separates the button from the text */
+.office-card .btn {
+    margin-top: 12px;
+    margin-right: 10px;
+}
+
+.office-card button:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+.provider-mock-notice {
+    color: #526174;
+    font-weight: bold;
+}
+
+/* URGENT WARNING: Styles the warning from Feature 3 */
+.urgent-warning {
+    background: #fff1f0;
+    color: #9f1d16;
+    border: 2px solid #d92d20;
+    border-radius: 8px;
+    padding: 20px;
+    line-height: 1.6;
+    font-weight: bold;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   Adjusts layouts for smaller screens.
+   ========================================================= */
+
+/* MEDIA QUERY: Applies these rules when the screen is
+   600px wide or smaller. */
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 65px 20px;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .site-header {
+        padding: 20px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .symptom-section {
+        margin: 25px 15px;
+        padding: 22px;
+    }
+
+    .intake-grid,
+    .symptom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .intake-progress ol {
+        gap: 6px;
+    }
+
+    .intake-progress li {
+        font-size: 12px;
+    }
+
+    .office-card {
+        padding: 18px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
