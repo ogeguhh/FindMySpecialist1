@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123d56">
+  <title>Find specialists | FindMySpecialist</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="/index.html"><span class="brand-mark" aria-hidden="true">+</span>FindMySpecialist</a>
+    <nav class="site-nav" aria-label="Main navigation"><a href="/index.html">Home</a><a href="/intake.html">Symptoms</a><a href="/match.html">Match</a><a href="/specialists.html" aria-current="page">Find specialists</a></nav>
+    <div class="account-nav" id="accountNav"><a class="nav-login" href="/login.html">Log in</a><a class="button button-small" href="/signup.html">Create account</a><span class="account-summary" id="accountSummary" hidden></span><button class="button button-small button-outline logout-button" id="logoutButton" type="button" hidden>End session</button></div>
+  </div></header>
+  <main class="content-main">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/index.html">Home</a><span aria-hidden="true">/</span><span>Find specialists</span></nav>
+    <ol class="progress-list" aria-label="Your progress"><li class="progress-done"><span>1</span> Symptoms</li><li class="progress-done"><span>2</span> Specialty match</li><li class="progress-current" aria-current="step"><span>3</span> Providers</li></ol>
+    <section class="content-card">
+      <div class="section-title-row"><div><p class="eyebrow">Step 3 of 3</p><h1>Find demo specialists</h1><p class="form-intro">Search the synthetic provider directory using your preferences.</p></div><span class="demo-badge">Demo directory</span></div>
+      <form id="searchForm" novalidate>
+        <div class="filter-grid">
+          <div class="field"><label for="specialty">Specialty</label><select name="specialty" id="specialty" required><option value="">Loading specialties…</option></select></div>
+          <div class="field"><label for="zip">ZIP code</label><input name="zip" id="zip" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}" maxlength="5" minlength="5" required aria-describedby="zipHint" placeholder="e.g. 55106"><small class="field-hint" id="zipHint">Enter a 5-digit ZIP code.</small></div>
+          <div class="field"><label for="insuranceProvider">Insurance provider <span class="optional">(optional)</span></label><select name="insuranceProvider" id="insuranceProvider"><option value="">Any provider</option></select></div>
+          <div class="field"><label for="insurancePlan">Insurance plan <span class="optional">(optional)</span></label><select name="insurancePlan" id="insurancePlan"><option value="">Any plan</option></select></div>
+          <div class="field"><label for="maxDistance">Maximum travel distance <span class="optional">(optional)</span></label><select name="maxDistance" id="maxDistance"><option value="">Any distance</option><option value="5">5 miles</option><option value="10">10 miles</option><option value="15">15 miles</option><option value="25">25 miles</option><option value="50">50 miles</option></select></div>
+        </div>
+        <p class="disclaimer"><strong>Important:</strong> Providers and insurance acceptance are synthetic examples. Insurance coverage is not verified in real time.</p>
+        <div class="form-message" id="message" role="status" aria-live="polite"></div>
+        <div class="actions-row search-actions"><button class="button" type="submit" id="searchButton">Search providers</button><button class="button button-quiet" type="button" id="cancelSearch">Clear search</button><button class="button button-quiet" type="button" id="savePrefs">Save preferences</button></div>
+      </form>
+      <section class="results-section" aria-labelledby="resultsTitle"><div class="results-header"><h2 id="resultsTitle">Search results</h2><span id="resultsCount" class="muted"></span></div><div id="results" aria-live="polite"><p class="empty-state">Enter your search filters to explore demo providers.</p></div></section>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><span>FindMySpecialist</span><span>Educational demo · Synthetic providers · No real-time insurance verification</span></div></footer>
+</body>
+</html>

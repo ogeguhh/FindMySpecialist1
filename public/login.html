@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123d56">
+  <title>Log in | FindMySpecialist</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="/index.html"><span class="brand-mark" aria-hidden="true">+</span>FindMySpecialist</a>
+    <nav class="site-nav" aria-label="Main navigation"><a href="/index.html">Home</a><a href="/intake.html">Symptoms</a><a href="/match.html">Match</a><a href="/specialists.html">Find specialists</a></nav>
+    <div class="account-nav" id="accountNav"><a class="nav-login" href="/login.html" aria-current="page">Log in</a><a class="button button-small" href="/signup.html">Create account</a><span class="account-summary" id="accountSummary" hidden></span><button class="button button-small button-outline logout-button" id="logoutButton" type="button" hidden>End session</button></div>
+  </div></header>
+  <main class="narrow-main">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/index.html">Home</a><span aria-hidden="true">/</span><span>Log in</span></nav>
+    <section class="form-card">
+      <p class="eyebrow">Welcome back</p>
+      <h1>Log in to your account</h1>
+      <p class="form-intro">Access your account and restore saved search preferences.</p>
+      <form id="loginForm" novalidate>
+        <div class="field"><label for="loginEmail">Email address</label><input id="loginEmail" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@example.com"><small class="field-hint">Use the email address associated with your account.</small></div>
+        <div class="field"><label for="loginPassword">Password</label><input id="loginPassword" name="password" type="password" autocomplete="current-password" required></div>
+        <button class="button button-wide" type="submit">Log in</button>
+      </form>
+      <div class="form-message" id="message" role="status" aria-live="polite"></div>
+      <p class="form-switch">New to FindMySpecialist? <a href="/signup.html">Create an account</a></p>
+      <p class="form-switch muted">Just exploring? <a href="/index.html">Continue as a guest</a> from the home page.</p>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><span>FindMySpecialist</span><span>Educational demo · Synthetic providers · No real-time insurance verification</span></div></footer>
+</body>
+</html>

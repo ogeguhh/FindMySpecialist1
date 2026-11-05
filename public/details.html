@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123d56">
+  <title>Provider details | FindMySpecialist</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="/index.html"><span class="brand-mark" aria-hidden="true">+</span>FindMySpecialist</a>
+    <nav class="site-nav" aria-label="Main navigation"><a href="/index.html">Home</a><a href="/intake.html">Symptoms</a><a href="/match.html">Match</a><a href="/specialists.html">Find specialists</a></nav>
+    <div class="account-nav" id="accountNav"><a class="nav-login" href="/login.html">Log in</a><a class="button button-small" href="/signup.html">Create account</a><span class="account-summary" id="accountSummary" hidden></span><button class="button button-small button-outline logout-button" id="logoutButton" type="button" hidden>End session</button></div>
+  </div></header>
+  <main class="content-main">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/index.html">Home</a><span aria-hidden="true">/</span><a id="resultsBreadcrumb" href="/specialists.html">Search results</a><span aria-hidden="true">/</span><span>Provider details</span></nav>
+    <section class="content-card detail-card">
+      <a class="text-link back-link" id="backToResults" href="/specialists.html">← Back to search results</a>
+      <div class="detail-heading"><div><p class="eyebrow">Provider information</p><h1 id="detailTitle">Provider details</h1></div><span class="demo-badge">Demo provider</span></div>
+      <div id="providerDetails" class="detail-content"><p class="loading-state">Loading provider details…</p></div>
+      <div class="form-message" id="message" role="status" aria-live="polite"></div>
+      <p class="disclaimer">This synthetic listing is for demonstration only. Contact details and real-time availability are not provided.</p>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><span>FindMySpecialist</span><span>Educational demo · Synthetic providers · No real-time insurance verification</span></div></footer>
+</body>
+</html>

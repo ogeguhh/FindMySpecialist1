@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123d56">
+  <title>Specialty match | FindMySpecialist</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="/index.html"><span class="brand-mark" aria-hidden="true">+</span>FindMySpecialist</a>
+    <nav class="site-nav" aria-label="Main navigation"><a href="/index.html">Home</a><a href="/intake.html">Symptoms</a><a href="/match.html" aria-current="page">Match</a><a href="/specialists.html">Find specialists</a></nav>
+    <div class="account-nav" id="accountNav"><a class="nav-login" href="/login.html">Log in</a><a class="button button-small" href="/signup.html">Create account</a><span class="account-summary" id="accountSummary" hidden></span><button class="button button-small button-outline logout-button" id="logoutButton" type="button" hidden>End session</button></div>
+  </div></header>
+  <main class="content-main">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/index.html">Home</a><span aria-hidden="true">/</span><a href="/intake.html">Symptoms</a><span aria-hidden="true">/</span><span>Specialty match</span></nav>
+    <ol class="progress-list" aria-label="Your progress"><li class="progress-done"><span>1</span> Symptoms</li><li class="progress-current" aria-current="step"><span>2</span> Specialty match</li><li><span>3</span> Providers</li></ol>
+    <section class="content-card">
+      <p class="eyebrow">Step 2 of 3</p><h1>Suggested specialties</h1>
+      <p class="form-intro">Suggestions use predefined rules based on your selected symptoms. They are categories to explore, not a diagnosis or treatment recommendation.</p>
+      <div id="matchSummary" class="match-summary" hidden></div>
+      <div id="matches" class="match-results"><p class="empty-state">Your specialty suggestions will appear here after evaluation.</p></div>
+      <div class="form-message" id="message" role="status" aria-live="assertive"></div>
+      <div class="actions-row"><a class="text-link" href="/intake.html">← Change symptoms</a><button class="button" id="runMatch" type="button">Evaluate selected symptoms</button></div>
+    </section>
+    <aside class="safety-banner"><span class="safety-icon" aria-hidden="true">i</span><p><strong>Not medical advice.</strong> If you have an urgent or worsening concern, contact a qualified healthcare professional. Call 911 for emergencies.</p></aside>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><span>FindMySpecialist</span><span>Educational demo · Synthetic providers · No real-time insurance verification</span></div></footer>
+</body>
+</html>

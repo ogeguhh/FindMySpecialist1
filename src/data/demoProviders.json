@@ -1,0 +1,69 @@
+[
+  {
+    "id": "p1",
+    "name": "Dr. Amanda Brown",
+    "specialty": "Dermatology",
+    "clinic": "St. Paul Demo Dermatology",
+    "location": "St. Paul, MN",
+    "zip": "55106",
+    "distanceMiles": 3,
+    "insurance": {
+      "HealthPartners": [
+        "Medical Assistance",
+        "MinnesotaCare"
+      ]
+    },
+    "bookingUrl": null
+  },
+  {
+    "id": "p2",
+    "name": "Dr. Emily Johnson",
+    "specialty": "Dermatology",
+    "clinic": "East Metro Demo Clinic",
+    "location": "St. Paul, MN",
+    "zip": "55106",
+    "distanceMiles": 7,
+    "insurance": {
+      "HealthPartners": [
+        "Medical Assistance"
+      ],
+      "Medica": [
+        "Standard"
+      ]
+    },
+    "bookingUrl": null
+  },
+  {
+    "id": "p3",
+    "name": "Dr. Samuel Lee",
+    "specialty": "Orthopedics",
+    "clinic": "Demo Orthopedic Center",
+    "location": "St. Paul, MN",
+    "zip": "55106",
+    "distanceMiles": 5,
+    "insurance": {
+      "HealthPartners": [
+        "Medical Assistance"
+      ],
+      "Blue Cross Blue Shield": [
+        "Standard"
+      ]
+    },
+    "bookingUrl": null
+  },
+  {
+    "id": "p4",
+    "name": "Dr. Nina Patel",
+    "specialty": "Neurology",
+    "clinic": "Demo Neurology Clinic",
+    "location": "St. Paul, MN",
+    "zip": "55106",
+    "distanceMiles": 9,
+    "insurance": {
+      "HealthPartners": [
+        "Medical Assistance"
+      ]
+    },
+    "bookingUrl": null
+  }
+]

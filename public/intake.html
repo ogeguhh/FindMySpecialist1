@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123d56">
+  <title>Select symptoms | FindMySpecialist</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="/index.html"><span class="brand-mark" aria-hidden="true">+</span>FindMySpecialist</a>
+    <nav class="site-nav" aria-label="Main navigation"><a href="/index.html">Home</a><a href="/intake.html" aria-current="page">Symptoms</a><a href="/match.html">Match</a><a href="/specialists.html">Find specialists</a></nav>
+    <div class="account-nav" id="accountNav"><a class="nav-login" href="/login.html">Log in</a><a class="button button-small" href="/signup.html">Create account</a><span class="account-summary" id="accountSummary" hidden></span><button class="button button-small button-outline logout-button" id="logoutButton" type="button" hidden>End session</button></div>
+  </div></header>
+  <main class="content-main">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/index.html">Home</a><span aria-hidden="true">/</span><span>Select symptoms</span></nav>
+    <ol class="progress-list" aria-label="Your progress"><li class="progress-current" aria-current="step"><span>1</span> Symptoms</li><li><span>2</span> Specialty match</li><li><span>3</span> Providers</li></ol>
+    <section class="content-card">
+      <div class="section-title-row"><div><p class="eyebrow">Step 1 of 3</p><h1>Select symptoms</h1><p class="form-intro">Search the approved list and choose one to three symptoms. You can update your choices before continuing.</p></div><span class="info-pill">Rule-based suggestions</span></div>
+      <div class="field search-field"><label for="symptomSearch">Search symptoms</label><input id="symptomSearch" type="search" autocomplete="off" placeholder="Try “knee” or “headache”" aria-describedby="symptomSearchHint"><small class="field-hint" id="symptomSearchHint">Only supported symptoms are included in this demo.</small></div>
+      <div class="symptom-layout">
+        <section class="symptom-list-wrap" aria-labelledby="availableTitle"><h2 class="subheading" id="availableTitle">Available symptoms</h2><div id="symptomChoices" class="symptom-list" aria-live="polite"><p class="loading-state">Loading supported symptoms…</p></div></section>
+        <aside class="selected-panel" aria-labelledby="selectedTitle"><div class="selected-heading"><h2 class="subheading" id="selectedTitle">Your selection</h2><span class="count-badge" id="selectedCount" aria-live="polite">0 of 3</span></div><div id="selectedSymptoms" class="selected-list"><p class="empty-hint">Your selected symptoms will appear here.</p></div></aside>
+      </div>
+      <div class="form-message" id="message" role="status" aria-live="assertive"></div>
+      <div class="actions-row"><a class="text-link" href="/index.html">← Back home</a><button class="button" id="submitSymptoms" type="button">Continue to specialty match <span aria-hidden="true">→</span></button></div>
+    </section>
+    <aside class="safety-banner"><span class="safety-icon" aria-hidden="true">i</span><p><strong>Urgent symptoms need urgent care.</strong> This tool does not diagnose. If you may be experiencing an emergency, call 911 or seek immediate medical care.</p></aside>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><span>FindMySpecialist</span><span>Educational demo · Synthetic providers · No real-time insurance verification</span></div></footer>
+</body>
+</html>
