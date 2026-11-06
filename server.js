@@ -1,2 +1,16 @@
-// Optional .env values can be supplied by your shell or hosting provider.
-const Application=require('./src/Application');const port=Number(process.env.PORT||3000);new Application().app.listen(port,()=>console.log(`FindMySpecialist running at http://localhost:${port}`));
+
+const Application = require('./src/Application');
+
+const app = new Application().app;
+
+if (require.main === module) {
+  const port = Number(process.env.PORT || 3000);
+
+  app.listen(port, () => {
+    console.log(
+      `FindMySpecialist running on port ${port}`
+    );
+  });
+}
+
+module.exports = app;
