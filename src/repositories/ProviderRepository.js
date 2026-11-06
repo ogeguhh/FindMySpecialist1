@@ -1,0 +1,1 @@
+const Provider=require('../models/Provider');const providers=require('../data/demoProviders.json');class ProviderRepository {all(){return providers.map(p=>new Provider(p));} findById(id){return this.all().find(p=>p.id===id);}}module.exports=ProviderRepository;

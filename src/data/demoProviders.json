@@ -1,0 +1,342 @@
+[
+  {
+    "id": "p1",
+    "name": "Dr. Amanda Brown",
+    "specialty": "Dermatology",
+    "clinic": "St. Paul Demo Dermatology",
+    "location": "St. Paul, MN",
+    "zip": "55106",
+    "region": "Twin Cities",
+    "distanceMiles": 3,
+    "insurance": {
+      "HealthPartners": [
+        "Medical Assistance",
+        "MinnesotaCare"
+      ]
+    },
+    "bookingUrl": null
+  },
+  {
+    "id": "p2",
+    "name": "Dr. Emily Johnson",
+    "specialty": "Dermatology",
+    "clinic": "East Metro Demo Clinic",
+    "location": "St. Paul, MN",
+    "zip": "55106",
+    "region": "Twin Cities",
+    "distanceMiles": 7,
+    "insurance": {
+      "HealthPartners": [
+        "Medical Assistance"
+      ],
+      "Medica": [
+        "Standard"
+      ]
+    },
+    "bookingUrl": null
+  },
+  {
+    "id": "p3",
+    "name": "Dr. Samuel Lee",
+    "specialty": "Orthopedics",
+    "clinic": "Demo Orthopedic Center",
+    "location": "St. Paul, MN",
+    "zip": "55106",
+    "region": "Twin Cities",
+    "distanceMiles": 5,
+    "insurance": {
+      "HealthPartners": [
+        "Medical Assistance"
+      ],
+      "Blue Cross Blue Shield": [
+        "Standard"
+      ]
+    },
+    "bookingUrl": null
+  },
+  {
+    "id": "p4",
+    "name": "Dr. Nina Patel",
+    "specialty": "Neurology",
+    "clinic": "Demo Neurology Clinic",
+    "location": "St. Paul, MN",
+    "zip": "55106",
+    "region": "Twin Cities",
+    "distanceMiles": 9,
+    "insurance": {
+      "HealthPartners": [
+        "Medical Assistance"
+      ]
+    },
+    "bookingUrl": null
+  },
+  {
+    "id": "p5",
+    "name": "Dr. Maya Thompson",
+    "specialty": "Dermatology",
+    "clinic": "Minneapolis Demo Skin Clinic",
+    "location": "Minneapolis, MN",
+    "zip": "55401",
+    "region": "Twin Cities",
+    "distanceMiles": 4,
+    "insurance": {
+      "Medica": ["Standard"],
+      "Blue Cross Blue Shield": ["Preferred"]
+    },
+    "bookingUrl": null
+  },
+  {
+    "id": "p6",
+    "name": "Dr. Jordan Kim",
+    "specialty": "Orthopedics",
+    "clinic": "North Loop Demo Orthopedics",
+    "location": "Minneapolis, MN",
+    "zip": "55401",
+    "region": "Twin Cities",
+    "distanceMiles": 6,
+    "insurance": {
+      "Blue Cross Blue Shield": ["Standard"],
+      "Medica": ["Standard"]
+    },
+    "bookingUrl": null
+  },
+  {
+    "id": "p7",
+    "name": "Dr. Olivia Martinez",
+    "specialty": "Neurology",
+    "clinic": "Bloomington Demo Neurology",
+    "location": "Bloomington, MN",
+    "zip": "55431",
+    "region": "Twin Cities",
+    "distanceMiles": 8,
+    "insurance": {
+      "HealthPartners": ["Medical Assistance"]
+    },
+    "bookingUrl": null
+  },
+  {
+    "id": "p8",
+    "name": "Dr. Grace Wilson",
+    "specialty": "Dermatology",
+    "clinic": "Duluth Demo Dermatology",
+    "location": "Duluth, MN",
+    "zip": "55802",
+    "region": "Northeast Minnesota",
+    "distanceMiles": 3,
+    "insurance": {
+      "HealthPartners": ["MinnesotaCare"],
+      "Medica": ["Standard"]
+    },
+    "bookingUrl": null
+  },
+  {
+    "id": "p9",
+    "name": "Dr. Ethan Davis",
+    "specialty": "Orthopedics",
+    "clinic": "North Shore Demo Orthopedics",
+    "location": "Duluth, MN",
+    "zip": "55802",
+    "region": "Northeast Minnesota",
+    "distanceMiles": 8,
+    "insurance": {
+      "Blue Cross Blue Shield": ["Standard"],
+      "HealthPartners": ["Medical Assistance"]
+    },
+    "bookingUrl": null
+  },
+  {
+    "id": "p10",
+    "name": "Dr. Ava Robinson",
+    "specialty": "Neurology",
+    "clinic": "Lake Superior Demo Neurology",
+    "location": "Duluth, MN",
+    "zip": "55802",
+    "region": "Northeast Minnesota",
+    "distanceMiles": 14,
+    "insurance": {
+      "Medica": ["Standard"],
+      "Blue Cross Blue Shield": ["Preferred"]
+    },
+    "bookingUrl": null
+  },
+  {
+    "id": "p11",
+    "name": "Dr. Noah Clark",
+    "specialty": "Dermatology",
+    "clinic": "Rochester Demo Dermatology",
+    "location": "Rochester, MN",
+    "zip": "55901",
+    "region": "Southeast Minnesota",
+    "distanceMiles": 3,
+    "insurance": {
+      "HealthPartners": ["Medical Assistance"],
+      "Blue Cross Blue Shield": ["Standard"]
+    },
+    "bookingUrl": null
+  },
+  {
+    "id": "p12",
+    "name": "Dr. Sofia Garcia",
+    "specialty": "Orthopedics",
+    "clinic": "Zumbro Valley Demo Orthopedics",
+    "location": "Rochester, MN",
+    "zip": "55901",
+    "region": "Southeast Minnesota",
+    "distanceMiles": 8,
+    "insurance": {
+      "Medica": ["Standard"],
+      "Blue Cross Blue Shield": ["Preferred"]
+    },
+    "bookingUrl": null
+  },
+  {
+    "id": "p13",
+    "name": "Dr. Lucas Lewis",
+    "specialty": "Neurology",
+    "clinic": "Rochester Demo Neurology",
+    "location": "Rochester, MN",
+    "zip": "55901",
+    "region": "Southeast Minnesota",
+    "distanceMiles": 14,
+    "insurance": {
+      "HealthPartners": ["MinnesotaCare"],
+      "Medica": ["Standard"]
+    },
+    "bookingUrl": null
+  },
+  {
+    "id": "p14",
+    "name": "Dr. Isabella Walker",
+    "specialty": "Dermatology",
+    "clinic": "Mankato Demo Dermatology",
+    "location": "Mankato, MN",
+    "zip": "56001",
+    "region": "South Central Minnesota",
+    "distanceMiles": 3,
+    "insurance": {
+      "Blue Cross Blue Shield": ["Standard"],
+      "HealthPartners": ["Medical Assistance"]
+    },
+    "bookingUrl": null
+  },
+  {
+    "id": "p15",
+    "name": "Dr. James Hall",
+    "specialty": "Orthopedics",
+    "clinic": "Minnesota River Demo Orthopedics",
+    "location": "Mankato, MN",
+    "zip": "56001",
+    "region": "South Central Minnesota",
+    "distanceMiles": 8,
+    "insurance": {
+      "Medica": ["Standard"],
+      "Blue Cross Blue Shield": ["Preferred"]
+    },
+    "bookingUrl": null
+  },
+  {
+    "id": "p16",
+    "name": "Dr. Mia Allen",
+    "specialty": "Neurology",
+    "clinic": "Mankato Demo Neurology",
+    "location": "Mankato, MN",
+    "zip": "56001",
+    "region": "South Central Minnesota",
+    "distanceMiles": 14,
+    "insurance": {
+      "HealthPartners": ["MinnesotaCare"],
+      "Medica": ["Standard"]
+    },
+    "bookingUrl": null
+  },
+  {
+    "id": "p17",
+    "name": "Dr. Benjamin Young",
+    "specialty": "Dermatology",
+    "clinic": "St. Cloud Demo Dermatology",
+    "location": "St. Cloud, MN",
+    "zip": "56301",
+    "region": "Central Minnesota",
+    "distanceMiles": 3,
+    "insurance": {
+      "HealthPartners": ["Medical Assistance"],
+      "Medica": ["Standard"]
+    },
+    "bookingUrl": null
+  },
+  {
+    "id": "p18",
+    "name": "Dr. Ella King",
+    "specialty": "Orthopedics",
+    "clinic": "Granite City Demo Orthopedics",
+    "location": "St. Cloud, MN",
+    "zip": "56301",
+    "region": "Central Minnesota",
+    "distanceMiles": 8,
+    "insurance": {
+      "Blue Cross Blue Shield": ["Standard"],
+      "HealthPartners": ["MinnesotaCare"]
+    },
+    "bookingUrl": null
+  },
+  {
+    "id": "p19",
+    "name": "Dr. Henry Wright",
+    "specialty": "Neurology",
+    "clinic": "St. Cloud Demo Neurology",
+    "location": "St. Cloud, MN",
+    "zip": "56301",
+    "region": "Central Minnesota",
+    "distanceMiles": 14,
+    "insurance": {
+      "Medica": ["Standard"],
+      "Blue Cross Blue Shield": ["Preferred"]
+    },
+    "bookingUrl": null
+  },
+  {
+    "id": "p20",
+    "name": "Dr. Amelia Scott",
+    "specialty": "Dermatology",
+    "clinic": "Moorhead Demo Dermatology",
+    "location": "Moorhead, MN",
+    "zip": "56560",
+    "region": "Northwest Minnesota",
+    "distanceMiles": 3,
+    "insurance": {
+      "HealthPartners": ["MinnesotaCare"],
+      "Blue Cross Blue Shield": ["Standard"]
+    },
+    "bookingUrl": null
+  },
+  {
+    "id": "p21",
+    "name": "Dr. Daniel Green",
+    "specialty": "Orthopedics",
+    "clinic": "Red River Demo Orthopedics",
+    "location": "Moorhead, MN",
+    "zip": "56560",
+    "region": "Northwest Minnesota",
+    "distanceMiles": 8,
+    "insurance": {
+      "Medica": ["Standard"],
+      "Blue Cross Blue Shield": ["Preferred"]
+    },
+    "bookingUrl": null
+  },
+  {
+    "id": "p22",
+    "name": "Dr. Lily Baker",
+    "specialty": "Neurology",
+    "clinic": "Moorhead Demo Neurology",
+    "location": "Moorhead, MN",
+    "zip": "56560",
+    "region": "Northwest Minnesota",
+    "distanceMiles": 14,
+    "insurance": {
+      "HealthPartners": ["Medical Assistance"],
+      "Medica": ["Standard"]
+    },
+    "bookingUrl": null
+  }
+]

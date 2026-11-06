@@ -1,0 +1,13 @@
+{
+  "HealthPartners": [
+    "Medical Assistance",
+    "MinnesotaCare"
+  ],
+  "Blue Cross Blue Shield": [
+    "Standard",
+    "Preferred"
+  ],
+  "Medica": [
+    "Standard"
+  ]
+}

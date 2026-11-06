@@ -1,0 +1,1 @@
+class BookingLinkService {isValid(url){if(typeof url!=='string')return false;try{const u=new URL(url);return u.protocol==='https:'&&!!u.hostname&&!['localhost','127.0.0.1'].includes(u.hostname);}catch{return false;}} getBookingUrl(url){return this.isValid(url)?url:null;}}module.exports=BookingLinkService;
