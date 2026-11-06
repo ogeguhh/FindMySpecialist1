@@ -1,58 +1,45 @@
-# FindMySpecialist1
-A web application that helps users find medical specialists based on symptoms and location.
+# FindMySpecialist — runnable capstone starter
 
-## Run the app
+A demonstration of the five capstone features: **Login or Guest Access**, **Select Symptoms**, **Match Specialty**, **Find Specialists**, and **View Details**.
 
-The Express server serves both the API and the frontend files.
+## Requirements
+- Node.js 18 or newer (Node 20/22 recommended)
+- npm
 
-1. Install dependencies:
+## Run locally
+1. Extract the ZIP.
+2. Open the `FindMySpecialist_Starter` folder in VS Code.
+3. Open the terminal in that folder.
+4. Run `npm install` (downloads Express, express-session, and bcryptjs).
+5. Run `npm start`.
+6. Open **http://localhost:3000**.
 
-   ```sh
-   npm install
-   ```
+Run tests with `npm test`. For auto-restart during development, run `npm run dev`.
 
-2. Start the app in development mode (automatically restarts when backend files change):
+## Quick demo
+- Choose **Continue as Guest**.
+- Select `Skin Rash` and `Acne`, then click **Next: Match Specialty** to see `Dermatology`.
+- Click **Find Specialists** to load matching providers automatically. Enter a supported Minnesota ZIP such as `55106`, and optionally filter by insurance or maximum distance.
+- Demo providers are available in the Twin Cities, Northeast Minnesota, Southeast Minnesota, South Central Minnesota, Central Minnesota, and Northwest Minnesota.
+- Alternatively, create an account, log in, and save preferences.
 
-   ```sh
-   npm run dev
-   ```
+## Backend design
+- `server.js`: starts the server
+- `src/Application.js`: configures Express and routes
+- `src/controllers/`: class-based HTTP controllers
+- `src/services/`: class-based validation, matching, authentication, provider filtering, booking URL checks
+- `src/models/`: class-based data models
+- `src/repositories/`: class-based data access
+- `public/`: plain HTML/CSS/JavaScript frontend (not class-based)
 
-3. Open [http://localhost:3000](http://localhost:3000) in your browser.
+## Deployment
+Upload/extract the project to a Node.js hosting provider or push it to GitHub. Set **build command** to `npm install`, **start command** to `npm start`, and **SESSION_SECRET** to a long random value. Use the host-assigned `PORT` environment variable. For a real deployment, replace the demo file-based user store and in-memory session store with a persistent database/session store. The current account file (`storage/users.json`) may be lost on ephemeral hosting. HTTPS and production-grade session/security configuration are required before handling real user data.
 
-For a regular start without automatic restarts, run `npm start`.
-
-## Matching and provider results
-
-Specialty suggestions use a transparent rule table based on the selected
-healthcare concerns. Suggestions are educational and are not diagnoses.
-Predefined urgent-warning concerns continue to show emergency guidance instead
-of routine provider recommendations.
-
-The provider records are synthetic mock listings. Search applies the entered
-age group, preferred language, appointment type, location, and distance limit.
-Distance estimates are available only for Minneapolis, Saint Paul,
-Bloomington, Maple Grove, and the supported nearby ZIP codes shown in the
-matching service. Insurance carrier-name comparisons are against mock data
-only; plans and network participation are never verified. Accessibility
-features and telehealth availability are also mock data and must be confirmed
-with a provider. No provider has a verified website configured, so external
-scheduling links remain disabled.
-
-Guest intake is temporarily held in the current browser tab for matching. The
-application does not persist or log intake data. This MVP does not yet include
-symptom storage or appointment history.
-
-## Optional accounts and saved preferences
-
-Account registration and sign-in use Supabase Auth. Profile routes require a
-verified Supabase access token in an HttpOnly, SameSite cookie; the browser
-does not receive or persist bearer tokens. Configure `SUPABASE_URL` and
-`SUPABASE_ANON_KEY` in the server environment, then apply
-[`database/user_preferences.sql`](./database/user_preferences.sql) to the
-Supabase project. The table uses row-level security and contains only
-consented matching preferences; it has no symptoms or medical-history fields.
-Users can edit or delete the saved preferences from the account page.
-
-Without those server environment variables, account endpoints explicitly
-report that account services are not configured. No service-role key or
-password database is used by this application.
+## Important limitations
+- **Not for medical diagnosis, emergency triage, or clinical use.** The warning rules are demonstration-only.
+- All providers, distances, insurance acceptance, and clinics are synthetic. ZIP codes are grouped into broad Minnesota demo service areas; ZIP-to-provider mileage is not calculated. Listed distance values are synthetic examples within those areas, not travel estimates from the entered ZIP.
+- No real patient data, live insurer verification, live provider lookup, or booking API integration.
+- No verified booking URLs are provided; booking buttons are intentionally unavailable.
+- This is a **working starter**, not a finished or production-secure capstone. Guest session data is temporary; frontend selections use browser session storage and are cleared when starting a new guest session or logging in.
+- `express-session`'s default MemoryStore is for local development only.
+- Accounts use bcrypt password hashes and a local JSON file for demo persistence. Do not use real passwords or sensitive health information in this prototype.

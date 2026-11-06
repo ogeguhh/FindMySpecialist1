@@ -1,29 +1,20 @@
 {
-  "name": "findmyspecialist1",
+  "name": "findmyspecialist",
   "version": "1.0.0",
-  "description": "A web application that helps users find medical specialists based on symptoms and location.",
-  "main": "index.js",
-  "directories": {
-    "test": "tests"
-  },
+  "private": true,
+  "description": "FindMySpecialist capstone runnable demo",
+  "main": "server.js",
   "scripts": {
-    "start": "node backend/server.js",
-    "dev": "node --watch backend/server.js",
+    "start": "node server.js",
+    "dev": "node --watch server.js",
     "test": "node --test tests/*.test.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ogeguhh/FindMySpecialist1.git"
+  "engines": {
+    "node": ">=18"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/ogeguhh/FindMySpecialist1/issues"
-  },
-  "homepage": "https://github.com/ogeguhh/FindMySpecialist1#readme",
   "dependencies": {
-    "express": "^5.3.0"
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "bcryptjs": "^2.4.3"
   }
 }
